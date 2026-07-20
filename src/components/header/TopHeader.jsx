@@ -14,7 +14,7 @@ function Topheader() {
     <div className="top_header">
       <div className="container">
         <Link className="logo" to="/">
-          <img src="/img/Logo.png" alt="Logo" />
+          <img src="/Ecommerce/img/Logo.png" alt="Logo" />
         </Link>
 
         <SearchBox />
