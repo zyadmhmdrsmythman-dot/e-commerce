@@ -1,0 +1,203 @@
+:root{
+  --main_color: #0090f0;
+  --p_color:#7b7b7b;
+  --bg_color:#f3f3f3;
+  --white_color:#fff;
+  --color_heading:#253237;
+  --border_color:#d6d6d6d5;
+}
+
+
+.item_details {
+    padding: 80px 0; /* زيادة الحشو العلوي والسفلي ليعطي مساحة مريحة مثل التصميم */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* تأكد من إعطاء الـ container عرض مناسب لتوسيط العناصر */
+.item_details .containar {
+    width: 85%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* محاذاة العناصر للأعلى لتتناسب مع التصميم */
+    gap: 5%;
+}
+
+/* قسم الصور */
+.item_details .imgs_item {
+    width: 40%; /* زيادة العرض قليلاً لتظهر التفاصيل بشكل أفضل */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item_details .imgs_item .big_img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.item_details .imgs_item .sm_img {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.item_details .imgs_item .sm_img img {
+    width: 28%; /* ضبط المقاس ليتناسب مع وجود 3 صور صغيرة بالأسفل */
+    height: auto;
+    object-fit: contain;
+}
+
+/* قسم تفاصيل المنتج */
+.item_details .details_item {
+    width: 55%;
+}
+
+.item_details .details_item .name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--main_color);
+}
+
+/* النجوم */
+.item_details .details_item .stars {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 3px;
+}
+
+.item_details .details_item .stars svg {
+    fill: #f8d941;
+    font-size: 16px;
+}
+
+/* السعر والتوافر */
+.item_details .details_item .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--dark_color);
+    margin-bottom: 15px;
+}
+
+.item_details .details_item h5 {
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--dark_color);
+}
+
+.item_details .details_item h5 span {
+    color: var(--main_color); /* تلوين كلمة In Stock و Asus بالأزرق */
+}
+
+/* الوصف */
+.item_details .details_item .desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text_color);
+    margin-bottom: 20px;
+}
+
+/* حالة المخزن / الاستعجال */
+.item_details .details_item .stock {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--alert_color);
+    margin-bottom: 25px;
+}
+
+.item_details .details_item .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: var(--main_color);
+    color: var(--white_color);
+    border: 1px solid var(--main_color);
+    border-radius: 4px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.item_details .details_item .btn.in-cart{
+    background: transparent;
+    color: var(--main_color);
+    pointer-events: none;
+}
+
+.item_details .details_item .icons span.in-fav{
+    background: var(--main_color);
+}
+
+.item_details .details_item .icons span.in-fav svg{
+    fill: var(--white_color);
+}
+
+.item_details .details_item .btn.in-cart svg{
+    fill: var(--main_color);
+}
+
+
+
+.item_details .details_item .btn svg {
+    font-size: 18px;
+    fill: var(--white_color);
+}
+
+/* أيقونات التفاعل (المفضلة والمشاركة) بالأسفل */
+.item_details .details_item .icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.item_details .details_item .icons span {
+    width: 40px;
+    height: 40px;
+    background: var(--bg_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item_details .details_item .icons span svg {
+    fill: var(--main_color); /* الأيقونات تكون زرقاء في الوضع الطبيعي */
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.item_details .details_item .icons span:hover {
+    background: var(--main_color);
+}
+
+.item_details .details_item .icons svg:hover  {
+    fill: var(--white_color); /* تتحول الأيقونة للأبيض عند التمرير */
+    transition: 0.3s;
+}
+
+.loading_Item .item_details .imgs_item{
+    height: 600px;
+}
+
+.loading_Item .item_details .details_item{
+    height: auto;
+    padding-top: 100px;
+
+}
+
+.loading_Item .item_details .details_item h5{
+    margin-bottom: 40px;
+    height: 30px;
+}
