@@ -33,7 +33,7 @@ function App() {
     <AnimatePresence mode="wait">
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchReslt />} />
         <Route path="/favorites" element={<Favorites />} />
