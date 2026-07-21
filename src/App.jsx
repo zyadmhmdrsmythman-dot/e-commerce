@@ -32,7 +32,7 @@ function App() {
   <ScrollToTop />
     <AnimatePresence mode="wait">
     <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/e-commerce" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchReslt />} />
