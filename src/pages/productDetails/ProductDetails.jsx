@@ -18,19 +18,29 @@ function ProductDetails() {
   const [relatedProduct, setRelatedProduct] = useState([]);
   const [loadingRelatedProduct, setLoadingRelatedProduct] = useState(true);
 
-  useEffect(() => {
-    const fechProduct = async () => {
-      try {
-        const res = await fetch(`https:dummyjson.com/products/${id}`);
-        const data = await res.json();
-        setProduct(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
+ useEffect(() => {
+  const fetchProduct = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch(`https://dummyjson.com/products/${id}`);
+      
+      // إذا كان المنتج غير موجود (404) أوقف العملية ولا تقم بعمل res.json()
+      if (!res.ok) {
+        throw new Error("Product not found");
       }
-    };
-    fechProduct();
-  }, [id]);
+
+      const data = await res.json();
+      setProduct(data);
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      setProduct(null); // تعيين المنتج كـ null لمنع ظهور Skeleton معلق
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProduct();
+}, [id]);
 
   useEffect(() => {
     if (!product) return;
