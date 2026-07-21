@@ -32,13 +32,13 @@ function App() {
   <ScrollToTop />
     <AnimatePresence mode="wait">
     <Routes>
-        <Route path="/e-commerce" element={<Home />} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchReslt />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="*" element={<NotFound/>} />
         
       </Routes>
     </AnimatePresence>
