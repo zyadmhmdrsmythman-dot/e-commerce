@@ -12,6 +12,7 @@ import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./components/CategoryPage/CategoryPage.jsx";
 import SearchReslt from "./pages/SearchReslt.jsx";
 import Favorites from "./pages/favorites/Favorites.jsx";
+import About from "./pages/About.jsx";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
     <AnimatePresence mode="wait">
     <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<SearchReslt />} />
         <Route path="/favorites" element={<Favorites />} />

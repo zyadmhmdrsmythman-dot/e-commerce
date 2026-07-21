@@ -211,3 +211,145 @@ header{
 .suggestions li img{
     width: 30px;
 }
+
+@media (max-width: 768px) {
+  /* 1️⃣ ضبط مسافة الصفحة لمنع اختفاء السلايدر تحت الهيدر */
+  body {
+    padding-top: 135px !important;
+  }
+
+  /* 2️⃣ إلغاء overflow: hidden للسماح للقوائم المنسدلة بالظهور للخارج */
+  .top_header .container {
+    flex-wrap: wrap;
+    padding: 6px 10px !important;
+    gap: 8px !important;
+    overflow: visible !important; /* 👈 أهم تعديل: يمنع قص قائمة البحث */
+  }
+
+  /* 3️⃣ تصغير الشعار والأيقونات وتقليل المسافات */
+  .top_header .logo {
+    width: 90px !important;
+  }
+
+  .top_header .header_icons {
+    gap: 12px !important;
+  }
+
+  .top_header .header_icons .icon .count {
+    width: 15px !important;
+    height: 15px !important;
+    font-size: 9px !important;
+    top: -5px !important;
+    right: -5px !important;
+  }
+
+  /* 4️⃣ ضبط حاوية البحث وسلوك القائمة المنسدلة */
+  .searchBox_Container {
+    flex: 1 !important;
+    max-width: 180px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    position: relative !important;
+    z-index: 2000 !important; /* رفع الطبقة */
+  }
+
+  /* 🎯 قائمة المقترحات (تظهر في المقدمة دائماً دون قص) */
+  .suggestions {
+    position: absolute !important;
+    top: calc(100% + 5px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--border_color) !important;
+    border-radius: 0 0 10px 10px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    z-index: 99999 !important; /* لضمان الظهور فوق الـ btm_header وجميع العناصر */
+    max-height: 220px !important;
+    overflow-y: auto !important;
+  }
+
+  /* 5️⃣ تنسيق عناصر النتيجة */
+  .suggestions li {
+    padding: 8px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #eee !important;
+  }
+
+  .suggestions li img {
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain !important;
+  }
+
+  .suggestions li span {
+    font-size: 11px !important;
+    color: var(--color_heading) !important;
+  }
+
+  /* 6️⃣ إطار شريط البحث الداخلي */
+  .top_header .search_box {
+    width: 100% !important;
+    height: 32px !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important; /* هنا مسموح لضبط حواف الزر والمدخل فقط */
+  }
+
+  .top_header .search_box input {
+    height: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 0 8px !important;
+    font-size: 11px !important;
+  }
+
+  .top_header .search_box button {
+    height: 100% !important;
+    width: 32px !important;
+    min-width: 32px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--main_color) !important;
+  }
+
+  .top_header .search_box button svg {
+    font-size: 13px !important;
+  }
+
+  /* 7️⃣ ضبط الشريط الأزرق السفلي (Bottom Header) */
+  .btm_header .nav {
+    height: 36px !important;
+    gap: 8px !important;
+  }
+
+  .btm_header .category_nav {
+    width: 130px !important;
+  }
+
+  .btm_header .category_nav .category_btm {
+    padding: 0 6px !important;
+  }
+
+  .btm_header .category_nav .category_btm p {
+    font-size: 11px !important;
+  }
+
+  .btm_header .nav_links {
+    gap: 4px !important;
+  }
+
+  .btm_header .nav_links li {
+    padding: 0 8px !important;
+  }
+
+  .btm_header .nav_links li a {
+    font-size: 12px !important;
+  }
+}
